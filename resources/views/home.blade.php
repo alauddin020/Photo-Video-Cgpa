@@ -3,6 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="list-group">
+                <a href="{{route('newData')}}" class="list-group-item list-group-item-action">Add New Data</a>
+                <a href="{{route('result')}}" class="list-group-item list-group-item-action">Result</a>
+                <a href="{{route('home')}}" class="list-group-item list-group-item-action disabled">Dashboard</a>
+            </div>
+        </div>
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
