@@ -60,6 +60,16 @@
     <div class="flex-center position-ref full-height">@if (Route::has('login'))
             <div class="top-right links">@auth <a href="{{ url('/home') }}">Home</a> @else <a href="{{ route('login') }}">Login</a> @if (Route::has('register')) <a href="{{ route('register') }}">Register</a> @endif @endauth</div> @endif
         <div class="content">
+            <div class="card">
+                <form action="{{URL::to('/search')}}" method="GET">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="q">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
             <div class="title m-b-md">Laravel</div>
             <div class="links">
                 <a href="{{route('newData')}}">Add New Data</a>

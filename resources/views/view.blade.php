@@ -167,7 +167,15 @@
                 }
                 $total= ($cse101+$cse102+$math+$eng)/12;
                 //return $total;
-                return round($total,2);
+                if ($total==4 || $total=3 || $total==2) 
+                {
+                    # code...
+                    return $total.".00";
+                }
+                else
+                {
+                    return round($total,2);
+                }
             }
         else
             {
