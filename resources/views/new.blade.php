@@ -89,6 +89,10 @@
                                          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                                     </div>
                                 </div>
+                                <br>
+                                <div style="display: none;" class='video-prev' class="pull-right">
+                                    <video style="height: 200px;" class="video-preview" controls="controls"/>
+                                 </div>
                             </div>
                         </div>
                     </form>
@@ -119,9 +123,43 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+// If user tries to upload videos other than these extension , it will throw error.
+function isVideo(filename) {
+    var ext = getExtension(filename);
+    switch (ext.toLowerCase()) {
+    case 'm4v':
+    case 'avi':
+    case 'mpg':
+    case 'mp4':
+    case 'mov':
+    case 'mpg':
+    case 'mpeg':
+        // etc
+        return true;
+    }
+    return false;
+}
+
+function getExtension(filename) {
+    var parts = filename.split('.');
+    return parts[parts.length - 1];
+}
     $(document).ready(function ()
     {
        //alert(5);
+       $('#video').on('change', function(){
+      if (isVideo($(this).val())){
+        $('.video-preview').attr('src', URL.createObjectURL(this.files[0]));
+        $('.video-prev').show();
+      }
+      else
+      {
+        $('.upload-video-file').val('');
+        $('.video-prev').hide();
+        alert("Only video files are allowed to upload.")
+      }
+    });
         $('body').addClass('fa');
         $('#storeData').click(function (e)
         {
