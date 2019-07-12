@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title></title>
+     <link rel="stylesheet" type="text/css" href="style.css">
+     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ </head>
+ <body>
+ <div class="video-con">
+            <div class="loader-con">
+                  <div class="la-ball-scale-ripple-multiple la-3x">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+            </div>  
+            <video id="faVideo" src="fa.mp4" controls height="100%" width="100%" autoplay></video>
+            <input type="hidden" value="100" class="currentVol">
+            <div class="controls-con-con">
+            <div class="controls-con">
+                <div class="seekbar-con">
+                    <div class="loadbar"></div>
+                    <div class="seekbar"></div>
+                    </div>
+                <div class="slide">
+                <div class="play-pause"></div>
+                <div class="time-con">
+                    <span class="curtime" style="color:white">00:00</span>/<span class="durtime" style="color:#777">00:00</span>
+                </div>
+                <div class="right-align">
+                <div class="volume-con">
+                <div class="volume-icon"><i class="fa fa-volume-up" id="mute"></i></div>
+                <div class="volume-slider-con">
+                    <div class="volume-slider"></div>
+                </div>
+                </div>
+                
+                </div>
+                <img src="14101056.jpg" style="height: 50px;width: 50px;float: right;margin-top: -7%">
+                <div class="seprate-align">
+                    <div class="fullscreen">
+                    <i class="fa fa-expand" id="fullscreen"></i>
+                </div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+ </body>
+ </html>
