@@ -1,3 +1,244 @@
+<?php
+    function timeCount($value)
+    {
+        $a = explode('.',$value);
+        if (count($a)==2)
+        {
+            //return $a[0].':'.$a[1];
+            if ($a[0]<120)
+            {
+                $b = $a[0]-60;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '01'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '01'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '01'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '01'.':'.($b).':'.$a[1];
+                }
+            }
+            elseif($a[0]<180)
+            {
+                $b = $a[0]-120;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '02'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '02'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '02'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '02'.':'.($b).':'.$a[1];
+                }
+            }
+            elseif($a[0]<240)
+            {
+                $b = $a[0]-180;
+                if ($a[1]>60)
+                    {
+                        $c = $a[1]-60;
+                        return '03'.':'.($b+1).':'.$c;
+                    }
+                elseif ($a[1]>120)
+                    {
+                        $c = $a[1]-120;
+                        return '03'.':'.($b+2).':'.$c;
+                    }
+                elseif ($a[1]>180)
+                    {
+                        $c = $a[1]-180;
+                        return '03'.':'.($b+3).':'.$c;
+                    }
+                else
+                    {
+                        return '03'.':'.($b).':'.$a[1];
+                    }
+            }
+            elseif($a[0]<300)
+            {
+                $b = $a[0]-240;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '04'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '04'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '04'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '04'.':'.($b).':'.$a[1];
+                }
+            }
+            elseif($a[0]<360)
+            {
+                $b = $a[0]-300;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '05'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '05'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '05'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '05'.':'.($b).':'.$a[1];
+                }
+            }
+            elseif($a[0]<420)
+            {
+                $b = $a[0]-360;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '06'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '06'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '06'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '06'.':'.($b).':'.$a[1];
+                }
+            }
+            elseif($a[0]<480)
+            {
+                //return $a[0].'/'.$a[1];
+                $b = $a[0]-420;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '07'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '07'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '07'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '07'.':'.($b).':'.$a[1];
+                }
+            }
+            elseif($a[0]<540)
+            {
+                $b = $a[0]-480;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '08'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '08'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '08'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '08'.':'.($b).':'.$a[1];
+                }
+            }
+            elseif($a[0]<600)
+            {
+                $b = $a[0]-540;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '09'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '09'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '09'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '09'.':'.($b).':'.$a[1];
+                }
+            }
+            elseif($a[0]<660)
+            {
+                $b = $a[0]-600;
+                if ($a[1]>60)
+                {
+                    $c = $a[1]-60;
+                    return '10'.':'.($b+1).':'.$c;
+                }
+                elseif ($a[1]>120)
+                {
+                    $c = $a[1]-120;
+                    return '10'.':'.($b+2).':'.$c;
+                }
+                elseif ($a[1]>180)
+                {
+                    $c = $a[1]-180;
+                    return '10'.':'.($b+3).':'.$c;
+                }
+                else
+                {
+                    return '10'.':'.($b).':'.$a[1];
+                }
+            }
+        }
+    }
+?>
 @extends('layouts.app')
 
 @section('css')
@@ -14,17 +255,36 @@
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Time</th>
                         <th>Video View</th>
                     </tr>
                     </thead>
                     <tbody>
+                    @php $time = 0.0; @endphp
                     @foreach($posts as $post)
+                    @php
+                        $a = explode(':',$post->duration);
+                        if (count($a)==2)
+                        {
+                            $a    = $a[0].'.'.$a[1];
+                            $time = $time+ $a;
+                            $time = number_format(round((float)$time,2),2);
+                        }
+                        elseif (count($a)==3)
+                        {
+                            $a    = $a[0]*60+$a[1].'.'.$a['2'];
+                                $time = $time+ $a;
+                                $time = number_format(round((float)$time,2),2);
+                        }
+                    @endphp
                         <tr>
                             <td>{{$post->name}}</td>
                             <td>{{$post->email}}</td>
+                            <td>{{$post->duration}}</td>
                             <td onload="videoId('{{$post->id}}')"><a role="button" class="btn-success btn" onclick="videoId('{{$post->video}}')" data-toggle="modal" data-target=".bd-example-modal-lg">View</a> </td>
                         </tr>
                     @endforeach
+                    <tr>{{timeCount($time)}}</tr>
                     </tbody>
                 </table>
             </div>
@@ -79,8 +339,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <p style="margin-bottom: 0rem;">Alauddin F-a</p>
+{{--                            <p style="margin-bottom: 0rem;">Alauddin F-a</p>--}}
                         </div>
+                    </div>
+                    <div class="modal-footer justify-content-center">
+                        <span class="mr-4">Spread the word!</span>
+                        <a role="button" class="btn-floating btn-sm btn-fb"><i class="fa fa-facebook"></i></a>
+                        <!--Twitter-->
+                        <a role="button" class="btn-floating btn-sm btn-tw"><i class="fa fa-twitter"></i></a>
+                        <!--Google +-->
+                        <a role="button" class="btn-floating btn-sm btn-gplus"><i class="fa fa-google-plus"></i></a>
+                        <!--Linkedin-->
+                        <a role="button" class="btn-floating btn-sm btn-ins"><i class="fa fa-linkedin"></i></a>
+
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+
                     </div>
                 </div>
             </div>
@@ -125,6 +398,7 @@
                 }
                 return false;
             };
+            // var popup = window.open(siteUrl+"fa", "myPopup", 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=120,height=120')
         });
         $(document).ready(function () {
 

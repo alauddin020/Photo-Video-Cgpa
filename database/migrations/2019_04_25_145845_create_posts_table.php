@@ -19,6 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('email');
             $table->string('photo');
             $table->string('video');
+            $table->string('duration');
             $table->timestamps();
         });
     }

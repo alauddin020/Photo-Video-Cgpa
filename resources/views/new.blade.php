@@ -58,10 +58,19 @@
                                 <div class="input-group">
                                     <div class="custom-file">
                                         <input name="video" type="file" class="custom-file-input" id="video">
-                                        <label class="custom-file-label" for="inputGroupFile01">Choose Video File</label>
+                                        <label class="custom-file-label"  for="inputGroupFile01">Choose Video File</label>
                                     </div>
                                 </div>
                                 <small id="videoError" class="form-text text-danger"></small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="duration" class="col-sm-3 col-form-label">Video Duration</label>
+                            <div class="col-sm-9">
+                                <div>
+                                    <p id="duration"></p>
+{{--                                    <input type='text' class="form-control" name='duration' id='' />--}}
+                                </div>
                             </div>
                         </div>
                         <div class="form-group row">
@@ -196,13 +205,29 @@
                     dataType: "json",
                     success: function (data)
                     {
+                        console.log(data);
                         $('.progress').fadeOut(2000);
                         $('#status').show().html(data.success).fadeOut(4000);
+                    },error: function (xhr, status, error) {
+                        console.log(xhr.responseJSON.message);
+                        console.log(error);
                     }
                 })
             }
         });
     });
 </script>
-</body>
-</html>
+<script>
+    // $(document).ready(function () {
+    //     var du = $('#duration');
+    //     $('#video').change(function () {
+    //         if (this.files.length > 0) {
+    //
+    //             $.each(this.files, function (index, value) {
+    //                 console.log(value.duration);
+    //             })
+    //         }
+    //     });
+    // });
+
+</script>

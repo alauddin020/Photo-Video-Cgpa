@@ -12,6 +12,7 @@ class Post extends Model
         'email',
         'photo',
         'video',
+        'duration',
     ];
     function storeData($request)
     {
@@ -43,6 +44,7 @@ class Post extends Model
                 'email' => $email,
                 'photo' => $photoOne,
                 'video' => $videoOne,
+                'duration' => $videoOne,
             ]);
             return 'done';
         }

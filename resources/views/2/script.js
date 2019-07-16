@@ -5,7 +5,7 @@
     // Firefox 1.0+
     var isFirefox = typeof InstallTrigger !== 'undefined';
 
-    // Safari 3.0+ "[object HTMLElementConstructor]" 
+    // Safari 3.0+ "[object HTMLElementConstructor]"
     var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || safari.pushNotification);
 
     // Internet Explorer 6-11
@@ -43,11 +43,11 @@ function seekTime () {
     var hours   = Math.floor(sec_num / 3600);
     var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
     var seconds = sec_num - (hours * 3600) - (minutes * 60);
-    
+
     if (hours   < 10) {hours   = "0"+hours;}
     if (minutes < 10) {minutes = "0"+minutes;}
     if (seconds < 10) {seconds = "0"+seconds;}
-   
+
     // The durtime
     var sec_dur = Math.floor(video.duration); // don't forget the second param
     var hoursdur   = Math.floor(sec_dur / 3600);
@@ -57,7 +57,7 @@ function seekTime () {
     if (hoursdur   < 10) {hoursdur   = "0"+hoursdur;}
     if (minutesdur < 10) {minutesdur = "0"+minutesdur;}
     if (secondsdur < 10) {secondsdur = "0"+secondsdur;}
-        durtime.innerHTML = hoursdur+':'+minutesdur+':'+secondsdur; 
+        durtime.innerHTML = hoursdur+':'+minutesdur+':'+secondsdur;
         curtime.innerHTML = hours+':'+minutes+':'+seconds;
 }
 function play(){
@@ -68,20 +68,20 @@ function play(){
    }else{
        video.pause();
        playPause.classList += ' back';
-       playPause.style.backgroundImage = 'url(img/play.png)'; 
+       playPause.style.backgroundImage = 'url(img/play.png)';
    }
 }
 // The jquery Era
 // The volume effect
 // The loader
-$("video").on('wating',function(){
+video.on('wating',function(){
     $(".loader-con").css('display','block');
 });
-$("video").on('canplay',function(){
+video.on('canplay',function(){
      $(".loader-con").css('display','none');
 });
 // The buffer bar
-$("video").on('progress',function(){
+video.on('progress',function(){
     if(video.buffered.length > 0){
         var percent = (video.buffered.end(0) / video.duration) * 100;
         $(".loadbar").css('width',percent+'%');
@@ -223,7 +223,7 @@ $(".volume-con").hover(function(){
         $("video").toggleClass("fit");
     });
     //Full screen detection
-  //Now this thing is croos browsered  
+  //Now this thing is croos browsered
 $(document).on('mozfullscreenchange webkitfullscreenchange fullscreenchange msfullscreenchange', function() {
     "use strict";
     this.fullScreenMode = !this.fullScreenMode;
@@ -243,7 +243,7 @@ var simulateFullScreen = function() {
         $(".controls-con").removeClass('things-chrome');
         $(".controls-con").removeClass('things-fire');
         $(".loader-con").removeClass('alignLoader');
-         $(".seprate-align").css('margin-left','97.5%'); 
+         $(".seprate-align").css('margin-left','97.5%');
 }
     //Full screen in
     else {
@@ -255,16 +255,16 @@ var simulateFullScreen = function() {
      $(".controls-con").width(window.outerWidth+16);
      if(isChrome){
        $(".controls-con").addClass('things-chrome');
-       $(".seprate-align").css('margin-left','98.5%'); 
+       $(".seprate-align").css('margin-left','98.5%');
      }
-     if(isFirefox){ 
+     if(isFirefox){
         $(".controls-con").addClass('things-fire');
         $(".volume-con").css('transform','translate(-20px)');
      }
 }
     this.fullScreenMode = !this.fullScreenMode;
 };
-// The key support 
+// The key support
 $(document).on('keydown',function(e){
     if(e.which === 39){
         video.currentTime += 5;
@@ -273,12 +273,12 @@ $(document).on('keydown',function(e){
          video.currentTime -= 5;
     }
     if (e.which===38) { //keyup
-         if (currentVol<100) 
+         if (currentVol<100)
          {
             currentVol = parseInt(currentVol)+5;
             var percentage;
                 percentage = 100 * currentVol / 100;
-        
+
             $('.volume-slider').css('width', percentage + '%');
             video.volume = percentage / 100;
 
@@ -294,13 +294,13 @@ $(document).on('keydown',function(e){
             }
     }
     if (e.which===40) {
-        if (currentVol!=0 ) 
+        if (currentVol!=0 )
          {
             currentVol = parseInt(currentVol)-5;
 
             var percentage;
                 percentage = 100 * currentVol / 100;
-        
+
             $('.volume-slider').css('width', percentage + '%');
             video.volume = percentage / 100;
 
@@ -315,7 +315,7 @@ $(document).on('keydown',function(e){
             $("#mute").attr('class', 'fa fa-volume-up');
             }
     }
-    if (e.which===13) 
+    if (e.which===13)
     {
         $('.fullscreen').click();
     }
@@ -323,9 +323,9 @@ $(document).on('keydown',function(e){
         if(video.paused){
             video.play();
           playPause.style.backgroundImage = 'url(img/pause.png)';
-    playPause.classList = 'play-pause';        
+    playPause.classList = 'play-pause';
         }else{
-          
+
 playPause.style.backgroundImage = 'url(img/play.png)';
     playPause.classList += ' back';
             video.pause();

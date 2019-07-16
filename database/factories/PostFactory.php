@@ -12,6 +12,7 @@ $factory->define(Post::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'photo' => 'Alauddin.jpg',
-        'video' => $faker->sentence(2).'mp4'// password
+        'video' => $faker->sentence(2).'mp4',// password
+        'duration'=>'1500'
     ];
 });
