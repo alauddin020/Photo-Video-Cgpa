@@ -24,7 +24,9 @@ Route::get('/fa','PostController@create');
 Route::get('/blob:', function () {
     abort(404);
 });
-
+Route::get('/counter','PusherController@index');
+Route::get('/send','PusherController@view');
+Route::post('/send','PusherController@send');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
